@@ -7,11 +7,10 @@ This module provides a function to create a .tgz archive from web_static folder
 from fabric.api import *
 from datetime import datetime
 import os
-import pep8
 
 
 # setting the web-01 and web-02 ip addresses
-env.hosts = ['54.90.12.230', '52.86.29.154']
+env.hosts = ['54.196.29.95', '100.25.35.206']
 env.user = "ubuntu"
 
 
