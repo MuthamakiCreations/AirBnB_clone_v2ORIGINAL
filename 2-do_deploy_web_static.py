@@ -40,9 +40,9 @@ def do_deploy(archive_path):
     if os.path.exists(archive_path):
         # upload the archive to /tmp/directory in web server
         put(archive_path, '/tmp/')
-        # extract filename from a full path, web_static_20231004163451.tgz
+        # extract filename from a full path, web_static_20231011080206.tgz
         archive_name = archive_path.split('/')[-1]
-        # extract only the folder name, web_static_20231004163451
+        # extract only the folder name, web_static_20231011080206
         archive_folder = archive_path.split('.')[0]  # gets filename
         # place the extracted content in desired folder
         run('mkdir -p /data/web_static/releases/{}'.format(archive_folder))
