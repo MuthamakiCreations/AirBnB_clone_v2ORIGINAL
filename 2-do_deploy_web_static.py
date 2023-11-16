@@ -7,6 +7,7 @@ This module provides a function to create a .tgz archive from web_static folder
 from fabric.api import *
 from datetime import datetime
 import os
+import pep8
 
 
 # setting the web-01 and web-02 ip addresses
@@ -40,10 +41,10 @@ def do_deploy(archive_path):
     if os.path.exists(archive_path):
         # upload the archive to /tmp/directory in web server
         put(archive_path, '/tmp/')
-        # extract filename from a full path, web_static_20231011080206.tgz
+        # extract filename from a full path, web_static_20231004163451.tgz
         archive_name = archive_path.split('/')[-1]
-        # extract only the folder name, web_static_20231011080206
-        archive_folder = archive_path.split('.')[0]  # gets filename
+        # extract only the folder name, web_static_20231004163451
+        archive_folder = archive_name.split('.')[0]  # gets filename
         # place the extracted content in desired folder
         run('mkdir -p /data/web_static/releases/{}'.format(archive_folder))
 
